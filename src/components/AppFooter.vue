@@ -234,6 +234,11 @@ export default {
 .footer-button {
     @include button;
 
+    &:hover {
+        font-size: 15px;
+        cursor: pointer;
+    }
+
 }
 
 //Liste icone social
@@ -261,6 +266,10 @@ export default {
             display: flex;
             color: $white;
             list-style: $listnone;
+
+            &:hover {
+                filter: brightness(100);
+            }
         }
 
         .follow {
@@ -268,6 +277,7 @@ export default {
             color: #0282f9;
             padding-right: .5em;
         }
+
     }
 }
 </style>
