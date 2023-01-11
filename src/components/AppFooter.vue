@@ -5,28 +5,46 @@ export default {
             icon: [
                 {
                     label: 'buy-comics-digital-comics.png',
-                    url: '#',
-                    active: false
+                    active: false,
+                    description: 'DIGITAL COMICS'
                 },
                 {
                     label: 'buy-comics-merchandise.png',
-                    url: '#',
-                    active: true
+                    active: true,
+                    description: 'DC MERCHANDISE'
                 },
                 {
                     label: 'buy-comics-subscriptions.png',
-                    url: '#',
-                    active: false
+                    active: false,
+                    description: 'SUBSCRIPTION'
                 },
                 {
                     label: 'buy-comics-shop-locator.png',
-                    url: '#',
-                    active: false
+                    active: false,
+                    description: 'COMIC SHOP LOCATOR'
                 },
                 {
                     label: 'buy-dc-power-visa.svg',
-                    url: '#',
-                    active: false
+                    active: false,
+                    description: 'DC POWER VISA'
+                },
+            ],
+            social: [
+                {
+                    logo: 'footer-facebook.png',
+                },
+                {
+                    logo: 'footer-periscope.png',
+                },
+                {
+                    logo: 'footer-pinterest.png',
+                },
+                {
+                    logo: 'footer-twitter.png',
+
+                },
+                {
+                    logo: 'footer-youtube.png',
                 },
             ]
         }
@@ -45,6 +63,7 @@ export default {
             <ul>
                 <li v-for="(object, index) in icon" :key="index">
                     <img :src="getImagePath(object.label)" alt="loghi">
+                    <span class="description">{{ object.description }}</span>
                 </li>
             </ul>
         </div>
@@ -105,14 +124,16 @@ export default {
                 <img src="/img/dc-logo-bg.png" alt="">
             </div>
         </div>
-        <div class="button">
+        <div class="social">
             <div class="col-but">
                 <button class="footer-button">Sign-up now!</button>
             </div>
             <div class="icon">
-                <h3>Follow us</h3>
+                <h3 class="follow">Follow us</h3>
                 <ul>
-                    <li>ciao</li>
+                    <li v-for="(object, index) in social" :key="index">
+                        <a href="#"><img :src="getImagePath(object.logo)" alt="loghi"></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -141,10 +162,30 @@ export default {
 
     ul {
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-between;
         display: flex;
+        align-items: center;
         list-style: none;
+
+        li {
+            display: flex;
+            align-items: center;
+        }
+
+        .description {
+            padding-left: 2em;
+        }
+
+        img {
+            width: 20%;
+        }
+
+        span {
+            color: white;
+            font-size: 10px;
+        }
     }
+
 }
 
 .cont_list {
@@ -169,21 +210,48 @@ export default {
     }
 }
 
+.button {
+    background-color: #303030;
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .footer-button {
     @include button;
+
 }
 
 .social {
     height: 100px;
     background-color: #303030;
     align-items: center;
-    @include space_around;
+    display: flex;
+    justify-content: space-between;
     @include upbold;
 
     .icon {
         display: flex;
+        align-items: center;
         @include upbold;
 
+        ul {
+            display: flex;
+            gap: .5em;
+
+        }
+
+        li {
+            display: flex;
+            color: $white;
+            list-style: $listnone;
+        }
+
+        .follow {
+            @include upbold;
+            color: #0282f9;
+            padding-right: .5em;
+        }
     }
 }
 </style>
