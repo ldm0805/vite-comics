@@ -99,7 +99,8 @@ header {
     .header_cont {
         align-items: center;
         margin-top: 1em;
-        @include space_around;
+        display: flex;
+        justify-content: space-between;
     }
 
     img {

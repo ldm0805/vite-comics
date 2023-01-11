@@ -155,11 +155,8 @@ export default {
 
 // Footer delle liste
 .footer_cont {
-    padding: 2em;
+    padding: 2em 5em;
     background-color: #0282f9;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
 
     .contet_title {
@@ -174,8 +171,8 @@ export default {
 
     ul {
         width: 100%;
-        justify-content: space-between;
         display: flex;
+        justify-content: space-between;
         align-items: center;
         list-style: none;
 
@@ -185,11 +182,13 @@ export default {
         }
 
         .description {
-            padding-left: 2em;
+            padding-left: 1em;
         }
 
         img {
-            width: 20%;
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
         }
 
         span {
@@ -216,11 +215,17 @@ export default {
     li {
         color: $white;
         list-style: $listnone;
+
+
     }
 
     li a {
         color: $gray;
         text-decoration: none;
+
+        &:hover {
+            color: white;
+        }
     }
 }
 
