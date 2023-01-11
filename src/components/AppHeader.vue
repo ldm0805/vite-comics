@@ -83,13 +83,17 @@ export default {
 
 
 header {
+    width: 100%;
     text-align: center;
 
     .header_cont {
-        display: flex;
-        justify-content: space-between;
+        align-items: center;
         margin-top: 1em;
-        @include center;
+        @include space_around;
+    }
+
+    img {
+        width: 80%;
     }
 
     ul {
