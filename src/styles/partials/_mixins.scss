@@ -1,0 +1,10 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+@mixin upbold {
+    font-weight: bold;
+    text-transform: uppercase;
+}
