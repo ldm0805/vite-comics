@@ -43,8 +43,8 @@ export default {
     <footer>
         <div class="footer_cont">
             <ul>
-                <li v-for="(item, index) in icon" :key="index">
-                    <img :src="icon.label" alt="loghi">
+                <li v-for="(label) in icon" :key="index">
+                    <img :src="getImagePath(label)" alt="loghi">
                 </li>
             </ul>
         </div>
