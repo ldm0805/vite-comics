@@ -52,7 +52,7 @@ export default {
                     label: 'Shop',
                     url: '#',
                     active: false
-                },
+                }
             ]
         }
     }
@@ -62,7 +62,7 @@ export default {
     <header>
         <div class="header_cont">
             <a href="/" class="brand">
-                <img src="/img/dc-logo.png" alt="logo_molisana">
+                <img src="/img/dc-logo.png" alt="dc_logo">
             </a>
             <nav>
                 <ul>
@@ -83,7 +83,6 @@ export default {
 
 
 header {
-    width: 100%;
     text-align: center;
 
     .header_cont {
@@ -102,11 +101,10 @@ header {
         @include center;
 
         li a {
-            display: inline-block;
             padding: 1em;
+            font-size: 16px;
             text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s;
+            transition: border 0.3s;
             @include upbold;
 
             &.active,

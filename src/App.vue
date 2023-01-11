@@ -9,7 +9,6 @@ export default {
     AppHeader,
     AppContent,
     AppFooter,
-
   }
 }
 </script>
@@ -19,7 +18,6 @@ export default {
     <AppContent />
     <AppFooter />
   </div>
-
 </template>
 
 <style lang="scss">

@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         getImagePath: function (img) {
-            return new URL(`../assets/img/${img}`, import.meta.url).href;
+            return `/img/${img}`
         }
     }
 };
@@ -43,8 +43,8 @@ export default {
     <footer>
         <div class="footer_cont">
             <ul>
-                <li v-for="(label) in icon" :key="index">
-                    <img :src="getImagePath(label)" alt="loghi">
+                <li v-for="(object, index) in icon" :key="index">
+                    <img :src="getImagePath(object.label)" alt="loghi">
                 </li>
             </ul>
         </div>
@@ -105,9 +105,9 @@ export default {
                 <img src="/img/dc-logo-bg.png" alt="">
             </div>
         </div>
-        <div class="social">
+        <div class="button">
             <div class="col-but">
-                <button>Sign-up now!</button>
+                <button class="footer-button">Sign-up now!</button>
             </div>
             <div class="icon">
                 <h3>Follow us</h3>
@@ -126,18 +126,24 @@ export default {
 
 
 .footer_cont {
-    height: 200px;
+
+    padding: 2em;
     background-color: #0282f9;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
 
     .contet_title {
         color: white;
         @include upbold;
     }
 
-    .cont_list {
-        color: red;
+    ul {
+        width: 100%;
+        justify-content: space-around;
+        display: flex;
+        list-style: none;
     }
 }
 
@@ -161,6 +167,10 @@ export default {
         color: $gray;
         text-decoration: none;
     }
+}
+
+.footer-button {
+    @include button;
 }
 
 .social {
