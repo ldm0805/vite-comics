@@ -64,14 +64,18 @@ export default {
     }
 }
 </script>
+<!-- Header -->
 <template>
     <header>
+        <!-- Logo header -->
         <div class="header_cont">
             <a href="/" class="brand">
                 <img src="/img/dc-logo.png" alt="dc_logo">
             </a>
+            <!-- Navbar -->
             <nav>
                 <ul>
+                    <!-- For per la navbar + click sugli elementi per assegnare la classe active -->
                     <li v-for="(item, index) in menu" :key="index" @click="selectedItem(index)"
                         :class="(activeItem === index) ? 'active' : ''">
                         <a :href="item.url">

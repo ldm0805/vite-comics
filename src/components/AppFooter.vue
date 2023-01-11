@@ -2,6 +2,7 @@
 export default {
     data() {
         return {
+            // Array di oggetti icone footer
             icon: [
                 {
                     label: 'buy-comics-digital-comics.png',
@@ -49,6 +50,7 @@ export default {
             ]
         }
     },
+    // Funzione per visualizzare prime icone nel footer;
     methods: {
         getImagePath: function (img) {
             return `/img/${img}`
@@ -61,6 +63,7 @@ export default {
     <footer>
         <div class="footer_cont">
             <ul>
+                <!-- Ciclo for per ciclare le prime icone del footer -->
                 <li v-for="(object, index) in icon" :key="index">
                     <a class="link-flex" href="#">
                         <img :src="getImagePath(object.label)" alt="logo">
@@ -69,7 +72,7 @@ export default {
                 </li>
             </ul>
         </div>
-
+        <!-- Footer links -->
         <div class="cols cont_list">
             <div>
                 <div class="footer-links">
@@ -84,7 +87,7 @@ export default {
                         <li><a href="#">News</a></li>
                     </ul>
                 </div>
-
+                <!-- Link footer -->
                 <div class="footer-links">
                     <h4>Shop</h4>
                     <ul>
@@ -93,7 +96,7 @@ export default {
                     </ul>
                 </div>
             </div>
-
+            <!-- Link footer -->
             <div class="footer-links">
                 <h4>DC</h4>
                 <ul>
@@ -126,6 +129,9 @@ export default {
                 <img src="/img/dc-logo-bg.png" alt="dc_logo">
             </div>
         </div>
+
+        <!-- Icone social nel footer -->
+
         <div class="social">
             <div class="col-but">
                 <button class="footer-button">Sign-up now!</button>
@@ -147,9 +153,8 @@ export default {
 @use '../styles/partials/mixins' as *;
 
 
-
+// Footer delle liste
 .footer_cont {
-
     padding: 2em;
     background-color: #0282f9;
     display: flex;
@@ -195,7 +200,7 @@ export default {
 
 }
 
-
+// Footer delle liste
 .cont_list {
     padding: 1em;
     background-image: url('/img/footer-bg.jpg');
@@ -230,6 +235,8 @@ export default {
     @include button;
 
 }
+
+//Liste icone social
 
 .social {
     height: 150px;
