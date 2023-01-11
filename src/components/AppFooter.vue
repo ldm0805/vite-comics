@@ -62,8 +62,10 @@ export default {
         <div class="footer_cont">
             <ul>
                 <li v-for="(object, index) in icon" :key="index">
-                    <img :src="getImagePath(object.label)" alt="loghi">
-                    <span class="description">{{ object.description }}</span>
+                    <a class="link-flex" href="#">
+                        <img :src="getImagePath(object.label)" alt="logo">
+                        <span class="description">{{ object.description }}</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -121,7 +123,7 @@ export default {
             </div>
 
             <div class="dc_bg">
-                <img src="/img/dc-logo-bg.png" alt="">
+                <img src="/img/dc-logo-bg.png" alt="dc_logo">
             </div>
         </div>
         <div class="social">
@@ -160,6 +162,11 @@ export default {
         @include upbold;
     }
 
+    .link-flex {
+        display: flex;
+        align-items: center;
+    }
+
     ul {
         width: 100%;
         justify-content: space-between;
@@ -167,9 +174,9 @@ export default {
         align-items: center;
         list-style: none;
 
-        li {
-            display: flex;
-            align-items: center;
+        li a {
+            color: $gray;
+            text-decoration: none;
         }
 
         .description {
@@ -188,11 +195,13 @@ export default {
 
 }
 
+
 .cont_list {
     padding: 1em;
     background-image: url('/img/footer-bg.jpg');
     background-size: cover;
     display: flex;
+    justify-content: space-around;
     color: $white;
 
     div {
@@ -223,11 +232,11 @@ export default {
 }
 
 .social {
-    height: 100px;
+    height: 150px;
     background-color: #303030;
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     @include upbold;
 
     .icon {

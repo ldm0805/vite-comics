@@ -2,6 +2,7 @@
 export default {
     data() {
         return {
+            activeItem: 0,
             menu: [
                 {
                     label: 'Characters',
@@ -55,6 +56,11 @@ export default {
                 }
             ]
         }
+    },
+    methods: {
+        selectedItem(index) {
+            this.activeItem = index
+        },
     }
 }
 </script>
@@ -66,8 +72,9 @@ export default {
             </a>
             <nav>
                 <ul>
-                    <li v-for="(item, index) in menu" :key="index">
-                        <a :href="item.url" :class="item.active ? 'active' : ''">
+                    <li v-for="(item, index) in menu" :key="index" @click="selectedItem(index)"
+                        :class="(activeItem === index) ? 'active' : ''">
+                        <a :href="item.url">
                             {{ item.label }}
                         </a>
                     </li>
@@ -100,6 +107,12 @@ header {
         margin: 2rem 1rem;
         @include center;
 
+        .active {
+            color: $primary;
+            border-bottom: 3px solid $primary;
+            padding-bottom: 2em;
+        }
+
         li a {
             padding: 1em;
             font-size: 16px;
@@ -107,12 +120,6 @@ header {
             transition: border 0.3s;
             @include upbold;
 
-            &.active,
-            &:hover {
-                color: $primary;
-                border-bottom: 2px solid $primary;
-                padding-bottom: 2em;
-            }
         }
     }
 }
