@@ -6,27 +6,22 @@ export default {
             icon: [
                 {
                     label: 'buy-comics-digital-comics.png',
-                    active: false,
                     description: 'DIGITAL COMICS'
                 },
                 {
                     label: 'buy-comics-merchandise.png',
-                    active: true,
                     description: 'DC MERCHANDISE'
                 },
                 {
                     label: 'buy-comics-subscriptions.png',
-                    active: false,
                     description: 'SUBSCRIPTION'
                 },
                 {
                     label: 'buy-comics-shop-locator.png',
-                    active: false,
                     description: 'COMIC SHOP LOCATOR'
                 },
                 {
                     label: 'buy-dc-power-visa.svg',
-                    active: false,
                     description: 'DC POWER VISA'
                 },
             ],
@@ -60,7 +55,7 @@ export default {
 </script>
 
 <template>
-    <footer>
+    <footer class="container">
         <div class="footer_cont">
             <ul>
                 <!-- Ciclo for per ciclare le prime icone del footer -->
@@ -124,10 +119,11 @@ export default {
                     <li><a href="#">DC Power Visa</a></li>
                 </ul>
             </div>
-
             <div class="dc_bg">
-                <img src="/img/dc-logo-bg.png" alt="dc_logo">
+                <div class="img_dc_bg">
+                </div>
             </div>
+
         </div>
 
         <!-- Icone social nel footer -->
@@ -148,7 +144,7 @@ export default {
     </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixins' as *;
 
@@ -174,11 +170,10 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        list-style: none;
+
 
         li a {
             color: $gray;
-            text-decoration: none;
         }
 
         .description {
@@ -200,13 +195,23 @@ export default {
 }
 
 // Footer delle liste
+
+
+
+
 .cont_list {
-    padding: 1em;
+    position: relative;
     background-image: url('/img/footer-bg.jpg');
     background-size: cover;
     display: flex;
     justify-content: space-around;
     color: $white;
+
+    .dc_bg {
+        background-image: url(/img/dc-logo-bg.png);
+        width: 600px;
+    }
+
 
     div {
         padding: 0em 2em;
@@ -215,13 +220,10 @@ export default {
     li {
         color: $white;
         list-style: $listnone;
-
-
     }
 
     li a {
         color: $gray;
-        text-decoration: none;
 
         &:hover {
             color: white;
@@ -230,9 +232,9 @@ export default {
 }
 
 .button {
+    padding: 2em;
     background-color: #303030;
-    display: flex;
-    justify-content: space-between;
+    @include justify_content_between;
 
 }
 
@@ -242,6 +244,7 @@ export default {
     &:hover {
         font-size: 15px;
         cursor: pointer;
+        filter: brightness(1.2);
     }
 
 }

@@ -4,6 +4,12 @@
     gap: 1em;
 }
 
+@mixin justify_content_between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @mixin upbold {
     font-weight: bold;
     text-transform: uppercase;
