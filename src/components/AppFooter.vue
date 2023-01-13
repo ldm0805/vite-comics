@@ -119,6 +119,7 @@ export default {
                     <li><a href="#">DC Power Visa</a></li>
                 </ul>
             </div>
+
             <div class="dc_bg">
                 <div class="img_dc_bg">
                 </div>
@@ -200,15 +201,20 @@ export default {
 
 
 .cont_list {
-    position: relative;
     background-image: url('/img/footer-bg.jpg');
     background-size: cover;
     display: flex;
     justify-content: space-around;
     color: $white;
 
+    .footer-links {
+        padding: 2em 0em;
+    }
+
     .dc_bg {
         background-image: url(/img/dc-logo-bg.png);
+        background-size: cover;
+        background-position: right center;
         width: 600px;
     }
 
