@@ -97,9 +97,7 @@ export default {
 .container {
 
     @include justify_content_between;
-
     margin-top: 1em;
-    max-width: 1170px;
     text-align: center;
 
     ul {
