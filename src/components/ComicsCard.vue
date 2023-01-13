@@ -6,7 +6,7 @@ export default {
 }
 </script>
 <template lang="">
-    <div>
+    <div class="container">
         <div class="comics-card" >
                     <div class="thumb-container">
                         <img :src="comic.thumb" :alt="comic.series" class="thumb">
@@ -21,19 +21,25 @@ export default {
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixins' as *;
 
-.comics-card {
-    margin: 10px 0px 50px 0px;
-    width: calc(100% / 6 - 20px);
+.container {
+    width: calc(100% / 6);
+    padding-bottom: 5em;
 
-    .thumb-container {
-        width: 100%;
+    .comics-card {
+        margin: 10px 0px 50px 0px;
+        width: 200px;
         height: 200px;
 
-        .thumb {
-            height: 100%;
+        .thumb-container {
             width: 100%;
-            object-fit: cover;
-            object-position: top;
+            height: 100%;
+
+            .thumb {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
         }
     }
 
